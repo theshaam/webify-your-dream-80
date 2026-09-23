@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type PointerEvent } from "react";
 import { ArrowRight, BarChart3, Boxes, Code2, Gamepad2, Globe2, Menu, MonitorSmartphone, Network, Search, ShieldCheck, Smartphone, UserRound, Users, Wrench, X } from "lucide-react";
-import hero from "../assets/gamenock-world.jpg";
-import vista from "../assets/gamenock-vista.jpg";
-import projects from "../assets/gamenock-projects.jpg";
-import racer from "../assets/gamenock-racer.jpg";
+import hero from "../assets/gamenock-illustrated-hero.jpg";
+import vista from "../assets/gamenock-illustrated-vista.jpg";
+import projects from "../assets/gamenock-illustrated-adventure.jpg";
+import western from "../assets/gamenock-illustrated-western.jpg";
+import racer from "../assets/gamenock-illustrated-racer.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -106,7 +107,7 @@ function Index() {
       <div className="section-intro"><div className="eyebrow">Featured work</div><h2>Selected Worlds. Real Impact.</h2><p>Original IP, co-development and specialised engineering across genres and platforms.</p><a href="#contact" className="link-arrow">View All Projects <Arrow /></a></div>
       <div className="project-grid">
         <a href="#contact" className="project-card"><img src={projects} alt="Adventurer and robot exploring a fantasy kingdom" loading="lazy" width={1536} height={1024}/><div className="project-details"><h3>Gamisodes</h3><p>A vibrant adventure for a new generation.</p><div className="project-row"><span className="tag">Complete Development</span><span className="round-arrow"><Arrow /></span></div><div className="platforms">PC · Mobile · Console</div></div></a>
-        <a href="#contact" className="project-card"><img src={hero} alt="A fantastical world of floating islands" loading="lazy" width={1920} height={1024}/><div className="project-details"><h3>HighNoon</h3><p>A bold co-development partnership.</p><div className="project-row"><span className="tag">Co-Development</span><span className="round-arrow"><Arrow /></span></div><div className="platforms">PC · Console</div></div></a>
+        <a href="#contact" className="project-card"><img src={western} alt="Cowboy overlooking a western frontier at sunset" loading="lazy" width={1536} height={1024}/><div className="project-details"><h3>HighNoon</h3><p>A bold co-development partnership.</p><div className="project-row"><span className="tag">Co-Development</span><span className="round-arrow"><Arrow /></span></div><div className="platforms">PC · Console</div></div></a>
         <a href="#contact" className="project-card"><img src={racer} alt="Off-road racing truck at sunset" loading="lazy" width={1536} height={1024}/><div className="project-details"><h3>Blast Wheels</h3><p>High-speed action built for more platforms.</p><div className="project-row"><span className="tag">Specialized Development</span><span className="round-arrow"><Arrow /></span></div><div className="platforms">PC · Mobile · WebGL</div></div></a>
       </div>
     </div></section>
@@ -114,8 +115,8 @@ function Index() {
     <section className="models scene-section" id="models"><img className="scene-bg" src={vista} alt="" loading="lazy" width={1920} height={1024}/><div className="scene-overlay" /><div className="container models-grid">
       <div className="models-intro"><div className="eyebrow">Our approach</div><h2>Engagement Models for Every Ambition.</h2><p>From full game development to embedded team support, we adapt to your goals, scale and timeline.</p><a href="#contact" className="link-arrow">Learn More <Arrow /></a></div>
       <div className="model-item"><img src={vista} alt="Floating world for complete development" loading="lazy" width={1920} height={1024}/><h3>Complete<br/>Development</h3><p>We have a vision from concept to launch. We bring the full production cycle.</p><a href="#contact" className="link-arrow">Learn More <Arrow /></a></div>
-      <div className="model-item"><img src={projects} alt="Adventure world for co-development" loading="lazy" width={1536} height={1024}/><h3>Co-Development</h3><p>We integrate with your team to add capacity, capability and momentum.</p><a href="#contact" className="link-arrow">Learn More <Arrow /></a></div>
-      <div className="model-item"><img src={hero} alt="Game world for specialist development" loading="lazy" width={1920} height={1024}/><h3>Specialized<br/>Development</h3><p>We take ownership of specialist systems and challenges for complex projects.</p><a href="#contact" className="link-arrow">Learn More <Arrow /></a></div>
+      <div className="model-item"><img src={western} alt="Western adventure world for co-development" loading="lazy" width={1536} height={1024}/><h3>Co-Development</h3><p>We integrate with your team to add capacity, capability and momentum.</p><a href="#contact" className="link-arrow">Learn More <Arrow /></a></div>
+      <div className="model-item"><img src={projects} alt="Game world for specialist development" loading="lazy" width={1536} height={1024}/><h3>Specialized<br/>Development</h3><p>We take ownership of specialist systems and challenges for complex projects.</p><a href="#contact" className="link-arrow">Learn More <Arrow /></a></div>
     </div></section>
 
     <section className="capabilities scene-section"><img className="scene-bg" src={vista} alt="" loading="lazy" width={1920} height={1024}/><div className="scene-overlay" /><div className="container capabilities-grid">
@@ -130,7 +131,7 @@ function Index() {
       <div className="expertise-grid">
         {[
           { title: "Unity", description: "Game development, prototyping and production expertise.", img: projects, icon: Gamepad2 },
-          { title: "Multiplayer", description: "Online systems, co-op experiences, and social features.", img: hero, icon: Network },
+          { title: "Multiplayer", description: "Online systems, co-op experiences, and social features.", img: western, icon: Network },
           { title: "Backend", description: "Player services, live operations and scalable infrastructure.", img: vista, icon: Boxes },
           { title: "Mobile", description: "Optimized experiences for iOS and Android.", img: projects, icon: Smartphone },
           { title: "WebGL", description: "High-quality browser games that reach new players.", img: vista, icon: Globe2 },
