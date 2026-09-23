@@ -6,6 +6,7 @@ import vista from "../assets/gamenock-illustrated-vista.jpg";
 import projects from "../assets/gamenock-illustrated-adventure.jpg";
 import western from "../assets/gamenock-illustrated-western.jpg";
 import racer from "../assets/gamenock-illustrated-racer.jpg";
+import keyart from "../assets/gamenock-illustrated-keyart.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -69,7 +70,7 @@ function Index() {
 
   return <main className="site" ref={siteRef}>
     <section className="hero" id="top" ref={heroRef} onPointerMove={moveHero} onPointerLeave={resetHero}>
-      <img src={hero} className="hero-image" alt="Adventurer and robot overlooking a floating fantasy city" width={1920} height={1024} />
+      <img src={keyart} className="hero-image" alt="Adventurer and robot overlooking a floating fantasy city" width={1920} height={1024} />
       <div className="hero-shade" />
       <header className="header">
         <a className="brand" href="#top" aria-label="GameNock home"><span className="brand-mark" />GameNock</a>
@@ -120,7 +121,7 @@ function Index() {
     </div></section>
 
     <section className="capabilities scene-section"><img className="scene-bg" src={vista} alt="" loading="lazy" width={1920} height={1024}/><div className="scene-overlay" /><div className="container capabilities-grid">
-      <div className="orbit"><img className="orbit-image" src={hero} alt="Floating island at the center of GameNock's capabilities" loading="lazy" width={1920} height={1024}/>
+      <div className="orbit"><img className="orbit-image" src={keyart} alt="Floating island at the center of GameNock's capabilities" loading="lazy" width={1920} height={1024}/>
         <span className="orbit-label l1"><Gamepad2/>Game Design<br/>& Production</span><span className="orbit-label l2"><Code2/>Engineering<br/>& Programming</span><span className="orbit-label l3"><Wrench/>Porting &<br/>Optimization</span><span className="orbit-label l4"><ShieldCheck/>QA & Testing</span><span className="orbit-label l5"><BarChart3/>Live Ops<br/>& Analytics</span><span className="orbit-label l6"><Network/>Multiplayer<br/>& Backend</span>
       </div>
       <div className="capabilities-copy"><div className="eyebrow">Our capabilities</div><h2>A Complete Orbit of Capabilities.</h2><p>End-to-end game development capabilities to support ambitious projects at any scale.</p></div>
@@ -140,7 +141,7 @@ function Index() {
       </div>
     </div></section>
 
-    <section className="process scene-section" id="process"><img className="scene-bg" src={hero} alt="" loading="lazy" width={1920} height={1024}/><div className="scene-overlay" /><div className="container">
+    <section className="process scene-section" id="process"><img className="scene-bg" src={keyart} alt="" loading="lazy" width={1920} height={1024}/><div className="scene-overlay" /><div className="container">
       <div className="process-intro"><div className="eyebrow">Our process</div><h2>From Concept<br/>to a World Players Love.</h2><p>A clear, collaborative process that keeps your project on track from day one to long-term success.</p></div>
       <div className="steps">{[
         ["01", "Discover", "Align on vision, opportunities and requirements"], ["02", "Plan", "Define scope, team structure and roadmap"], ["03", "Build", "Develop, iterate and integrate"], ["04", "Validate", "Test, refine and ensure quality across platforms"], ["05", "Launch & Grow", "Release with confidence and support what comes next"],
