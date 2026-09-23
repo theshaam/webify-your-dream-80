@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowRight, BarChart3, Bot, Boxes, Code2, Gamepad2, Globe2, Menu, MonitorSmartphone, Network, Paintbrush, Search, ShieldCheck, Smartphone, UserRound, Users, Wrench, X } from "lucide-react";
+import { ArrowRight, BarChart3, Boxes, Code2, Gamepad2, Globe2, Menu, MonitorSmartphone, Network, Search, ShieldCheck, Smartphone, UserRound, Users, Wrench, X } from "lucide-react";
 import hero from "../assets/gamenock-world.jpg";
 import vista from "../assets/gamenock-vista.jpg";
 import projects from "../assets/gamenock-projects.jpg";
@@ -72,7 +72,7 @@ function Index() {
     </div></section>
 
     <section className="models scene-section" id="models"><img className="scene-bg" src={vista} alt="" loading="lazy" width={1920} height={1024}/><div className="scene-overlay" /><div className="container models-grid">
-      <div className="models-intro"><div className="eyebrow">Our apped work</div><h2>Engagement Models for Every Ambition.</h2><p>From full game development to embedded team support, we adapt to your goals, scale and timeline.</p><a href="#contact" className="link-arrow">Learn More <Arrow /></a></div>
+      <div className="models-intro"><div className="eyebrow">Our approach</div><h2>Engagement Models for Every Ambition.</h2><p>From full game development to embedded team support, we adapt to your goals, scale and timeline.</p><a href="#contact" className="link-arrow">Learn More <Arrow /></a></div>
       <div className="model-item"><img src={vista} alt="Floating world for complete development" loading="lazy" width={1920} height={1024}/><h3>Complete<br/>Development</h3><p>We have a vision from concept to launch. We bring the full production cycle.</p><a href="#contact" className="link-arrow">Learn More <Arrow /></a></div>
       <div className="model-item"><img src={projects} alt="Adventure world for co-development" loading="lazy" width={1536} height={1024}/><h3>Co-Development</h3><p>We integrate with your team to add capacity, capability and momentum.</p><a href="#contact" className="link-arrow">Learn More <Arrow /></a></div>
       <div className="model-item"><img src={hero} alt="Game world for specialist development" loading="lazy" width={1920} height={1024}/><h3>Specialized<br/>Development</h3><p>We take ownership of specialist systems and challenges for complex projects.</p><a href="#contact" className="link-arrow">Learn More <Arrow /></a></div>
