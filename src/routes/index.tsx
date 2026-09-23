@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useRef, useState, type PointerEvent } from "react";
 import { ArrowRight, BarChart3, Boxes, Code2, Gamepad2, Globe2, Menu, MonitorSmartphone, Network, Search, ShieldCheck, Smartphone, UserRound, Users, Wrench, X } from "lucide-react";
 import hero from "../assets/gamenock-world.jpg";
 import vista from "../assets/gamenock-vista.jpg";
@@ -26,8 +26,48 @@ const nav = [
 
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
-  return <main className="site">
-    <section className="hero" id="top">
+  const siteRef = useRef<HTMLElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const site = siteRef.current;
+    if (!site || !window.matchMedia("(prefers-reduced-motion: no-preference)").matches) return;
+
+    const targets = site.querySelectorAll<HTMLElement>(
+      ".approach-list li, .approach-copy, .section-intro, .project-card, .models-intro, .model-item, .orbit, .capabilities-copy, .expertise-card, .process-intro, .step, .technology .eyebrow, .tech-list, .metrics, blockquote, .insights-head, .insight-card, .contact .container"
+    );
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -35px 0px" });
+
+    targets.forEach((target) => {
+      target.classList.add("reveal");
+      observer.observe(target);
+    });
+    site.classList.add("motion-ready");
+    return () => observer.disconnect();
+  }, []);
+
+  const moveHero = (event: PointerEvent<HTMLElement>) => {
+    if (event.pointerType !== "mouse" || !window.matchMedia("(prefers-reduced-motion: no-preference)").matches) return;
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+    heroRef.current?.style.setProperty("--scene-x", `${x * -16}px`);
+    heroRef.current?.style.setProperty("--scene-y", `${y * -12}px`);
+  };
+
+  const resetHero = () => {
+    heroRef.current?.style.setProperty("--scene-x", "0px");
+    heroRef.current?.style.setProperty("--scene-y", "0px");
+  };
+
+  return <main className="site" ref={siteRef}>
+    <section className="hero" id="top" ref={heroRef} onPointerMove={moveHero} onPointerLeave={resetHero}>
       <img src={hero} className="hero-image" alt="Adventurer and robot overlooking a floating fantasy city" width={1920} height={1024} />
       <div className="hero-shade" />
       <header className="header">
